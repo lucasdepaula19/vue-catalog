@@ -5,17 +5,20 @@
     <!-- <SearchComponent msg="Welcome to Your Vue.js App"/> -->
     <h1>Para onde irei?</h1>
     <SearchComponent msg />
+    <HomeComponent/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import SearchComponent from "@/components/SearchComponent.vue";
+import HomeComponent from "@/components/HomeComponent.vue";
 
 export default {
   name: "Home",
   components: {
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   }
 };
 </script>
