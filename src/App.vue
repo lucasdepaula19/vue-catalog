@@ -4,29 +4,23 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/scotland-540119_1920.jpg");
+  background-size: cover;
+  height: 100%;
   text-align: center;
-  color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
+#nav{
+  color: #ffffff;
+  margin-bottom: 1em;
+  padding-top: 10px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+#nav a{
+  color: #ffffff;
 }
 </style>
