@@ -3,10 +3,10 @@
     <SearchComponent/>
     <!-- <router-link to="/">Go to my Home</router-link> -->
     <div class="homeList">
-      <h2>Veja nossos principais destinos na {{this.$route.params.name}}</h2>
+      <h2> Principais resultados sobre {{this.$route.params.name}}</h2>
       <b-row class="countryGroupCard">
         <div class="countryCard" v-for="pais in paises" v-bind:key="pais.index">
-          <router-link :to="{ path: '/users'+pais.id }">
+          <router-link :to="{ path: '/place'+pais.name }">
             <b-img
               class="cardImg"
               :src="getImageUrl(pais.photos[0].photo_reference)"
@@ -26,7 +26,7 @@ import axios from "axios";
 import SearchComponent from "./SearchComponent.vue";
 
 export default {
-  name: "CountryComponent",
+  name: "PlaceComponent",
   computed: {},
 
   components: {
@@ -42,16 +42,12 @@ export default {
   mounted() {
     axios
       .get(
-        `http://localhost:8080/maps/api/place/findplacefromtext/json?input=cidades%20da%20${this.$route.params.name}&inputtype=textquery&fields=formatted_address,photos,name,rating&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA`
+        `http://localhost:8080/maps/api/place/findplacefromtext/json?input=${this.$route.params.name}&inputtype=textquery&fields=photos,name,rating&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA`
       )
       .then(resp => {
         this.paises = resp.data.candidates;
         // console.log(this.paises[0].name);
       });
-    // .get(
-    //     `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.paises.photos.photo_reference}&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA`
-    //   );
-    // .then(({ data }) => (this.paises = data.candidates));
   },
   methods: {
     getImageUrl(imageId) {

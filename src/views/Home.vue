@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <img alt="Vue logo" src="../../image/logo.png"> -->
     <!-- <SearchComponent msg="Welcome to Your Vue.js App"/> -->
-    <SearchComponent msg />
+    <SearchComponent/>
     <HomeComponent />
   </div>
 </template>
