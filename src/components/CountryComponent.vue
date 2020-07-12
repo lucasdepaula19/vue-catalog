@@ -3,12 +3,11 @@
     <SearchComponent msg />
     <!-- <router-link to="/">Go to my Home</router-link> -->
     <div class="homeList">
-      <h2>Veja nossas sugestões</h2>
+      <h2>Veja nossos principais destinos na ...</h2>
       <b-card-group deck>
-        <!-- <b-card v-for="pais in paises" v-bind:key="pais.id">
-          <p>teste card</p>
+        <b-card v-for="pais in paises" v-bind:key="pais.index">
           <router-link :to="{ path: '/users'+pais.id }">{{pais.name}}</router-link>
-        </b-card>-->
+        </b-card>
       </b-card-group>
     </div>
   </div>
@@ -35,10 +34,11 @@ export default {
   mounted() {
     axios
       .get(
-        "http://localhost:8080/maps/api/place/findplacefromtext/json?input=cidades%20da%20europa&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA"
+        "http://localhost:8080/maps/api/place/findplacefromtext/json?input=cidades%20da%20europa&inputtype=textquery&fields=photos,name,rating&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA"
       )
       .then(resp => {
-        console.log(resp);
+        this.paises = resp.data.candidates
+        // console.log(this.paises[0].name);
       });
     // .then(({ data }) => (this.paises = data.candidates));
   }
