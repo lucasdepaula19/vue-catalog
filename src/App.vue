@@ -22,9 +22,11 @@
 <style>
 #app {
   background-image: url("./assets/scotland-540119_1920.jpg");
+  background-repeat: repeat-y;
   background-size: cover;
-  height: 100%;
+  /* height: 100%; */
   text-align: center;
+  
 }
 #nav{
   color: #ffffff;
