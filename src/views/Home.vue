@@ -3,9 +3,8 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <img alt="Vue logo" src="../../image/logo.png"> -->
     <!-- <SearchComponent msg="Welcome to Your Vue.js App"/> -->
-    <h1>Para onde irei?</h1>
     <SearchComponent msg />
-    <HomeComponent/>
+    <HomeComponent />
   </div>
 </template>
 
@@ -19,11 +18,9 @@ export default {
   components: {
     SearchComponent,
     HomeComponent
-  }
+  },
 };
 </script>
+
 <style scoped>
-.home h1{
-  color: #ffffff;
-}
 </style>

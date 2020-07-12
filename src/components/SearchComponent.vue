@@ -1,19 +1,22 @@
 <template>
-  <div class="container">
+  <div>
     <!-- <h1>{{ msg }}</h1> -->
-    <b-form class="busca" method="post" action="/busca">
-      <b-input-group>
-        <b-input
-          class="input-buscar"
-          type="text"
-          placeholder="Para onde você quer ir?"
-          name="termo"
-          id="texto-buscar-home"
-          autocomplete="off"
-        />
-        <b-button variant="info" type="submit" class="btn-buscar">Buscar</b-button>
-      </b-input-group>
-    </b-form>
+    <h1>Para onde irei?</h1>
+    <div class="container">
+      <b-form class="busca" method="post" action="/busca">
+        <b-input-group>
+          <b-input
+            class="input-buscar"
+            type="text"
+            placeholder="Para onde você quer ir?"
+            name="termo"
+            id="texto-buscar-home"
+            autocomplete="off"
+          />
+          <b-button variant="info" type="submit" class="btn-buscar">Buscar</b-button>
+        </b-input-group>
+      </b-form>
+    </div>
   </div>
 </template>
 
@@ -32,6 +35,9 @@ export default {
 .busca {
   width: 35rem;
   margin: 0;
+}
+h1{
+  color: aliceblue;
 }
 .container {
   height: 7em;

@@ -1,42 +1,57 @@
 <template>
-  <div class="homeList">
+  <div class="Container homeList">
     <!-- <router-link to="/">Go to my Home</router-link> -->
     <h2>Encontre seu lugar no mundo</h2>
-    <b-card-group deck>
-      <b-card v-for="pais in paises" v-bind:key="pais.id">
-        <p>teste card</p>
-        <router-link :to="{ path: '/users'+pais.id }">{{pais.name}}</router-link>
+    <b-card-group deck class="homeGroupCard">
+      <b-card class="homeCard" v-for="continente in continentes" v-bind:key="continente.id">
+        <router-link :to="{ path: '/users'+continente.id }">{{continente.name}}</router-link>
       </b-card>
     </b-card-group>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "HomeComponent",
   computed: {},
 
   data() {
     return {
-      paises: []
+      continentes: [
+        { id: "1", name: "América do Sul" },
+        { id: "2", name: "América Central" },
+        { id: "3", name: "América do Norte" },
+        { id: "4", name: "Europa" },
+        { id: "5", name: "Ásia" },
+        { id: "6", name: "África" },
+        { id: "7", name: "Oceania" },
+        { id: "8", name: "Antárdida" }
+      ]
     };
   },
-  
-  mounted() {
-    axios
-      .get("https://www.mocky.io/v2/5ebdbed93100008e00c5cd2d/")
-      .then(({ data }) => (this.paises = data.results));
-  }
+
+  mounted() {}
 };
 </script>
+
 <style scoped>
-.homeList{
+.homeList {
   padding: 2em;
 }
-.homeList h2{
+.homeList h2 {
   color: white;
   margin-bottom: 1em;
+}
+.homeCard {
+  min-width: 15rem;
+  min-height: 15rem;
+  margin-bottom: 2em;
+  max-width: 15rem;
+  max-height: 15rem;
+}
+.homeGroupCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>>

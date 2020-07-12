@@ -8,6 +8,17 @@
   </div>
 </template>
 
+<script>
+// import Home from "./views/Home";
+
+// export default {
+//   name: "App",
+//   components: {
+//     Home
+//   }
+// };
+</script>
+
 <style>
 #app {
   background-image: url("./assets/scotland-540119_1920.jpg");
