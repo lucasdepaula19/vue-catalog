@@ -15,5 +15,3 @@
     Assim como no REACT, o VUEX é bem estranho no início
     Menor número de recursos se comparado ao Angular e ReactJS
     Documentação e comunidade menores do que os concorrentes
-
-teste
