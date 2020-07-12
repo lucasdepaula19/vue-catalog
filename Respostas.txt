@@ -1,0 +1,17 @@
+○ Porque eu escolhi o framework X?
+    Escolhi VUE devido maior simplicidade e semelhança com o REACT, que eu já sabia um pouco. Achei Angular um pouco mais complexo
+    e a curva de aprendizado para fazer o trabalho seria maior.
+
+○ Quais os três principais benefícios em relação ao React?
+    Facilidade de contrução do ambiente inicial e uso de templates com o VUE-CLI
+    Single File Components (SFC)
+    Número mais enxuto de bibliotecas
+    Menor curva de aprendizado
+
+
+
+○ Quais possíveis problemas poderemos enfrentar na utilização desse framework?
+    Curva de aprendizado devido a linguagem própriamaior.
+    Assim como no REACT, o VUEX é bem estranho no início
+    Menor número de recursos se comparado ao Angular e ReactJS
+    Documentação e comunidade menores do que os concorrentes

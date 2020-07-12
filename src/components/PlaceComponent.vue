@@ -88,6 +88,6 @@ h1 {
 }
 .cardImg {
   width: 100%;
-  height: 236px;
+  height: 234px;
 }
 </style>>
