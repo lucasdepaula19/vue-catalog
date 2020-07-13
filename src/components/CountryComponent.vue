@@ -1,21 +1,16 @@
 <template>
   <div>
-    <SearchComponent/>
-    <!-- <router-link to="/">Go to my Home</router-link> -->
+    <SearchComponent />
     <div class="homeList">
-      <h2>Veja nossos principais destinos na {{this.$route.params.name}}</h2>
+      <h2>Veja nossos principais destinos na {{ this.$route.params.name }}</h2>
       <b-row class="countryGroupCard">
-        <div class="countryCard" v-for="pais in paises" v-bind:key="pais.index">
-          <router-link :to="{ path: '/users'+pais.id }">
-            <b-img
-              class="cardImg"
-              :src="getImageUrl(pais.photos[0].photo_reference)"
-              fluid
-              :alt="pais.name"
-            ></b-img>
-            <h4>{{pais.name}}</h4>
-          </router-link>
-        </div>
+        <CardComponent
+          v-for="pais in paises"
+          v-bind:key="pais.index"
+          :photo="getImageUrl(pais.photos[0].photo_reference)"
+          :name="pais.name"
+        >
+        </CardComponent>
       </b-row>
     </div>
   </div>
@@ -24,13 +19,15 @@
 <script>
 import axios from "axios";
 import SearchComponent from "./SearchComponent.vue";
+import CardComponent from "@/components/CardComponent.vue";
 
 export default {
   name: "CountryComponent",
   computed: {},
 
   components: {
-    SearchComponent
+    SearchComponent,
+    CardComponent
   },
 
   data() {
@@ -46,12 +43,7 @@ export default {
       )
       .then(resp => {
         this.paises = resp.data.candidates;
-        // console.log(this.paises[0].name);
       });
-    // .get(
-    //     `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.paises.photos.photo_reference}&key=AIzaSyAxo6NjdG49PCiRTIvLwOleZT7k7f9_nbA`
-    //   );
-    // .then(({ data }) => (this.paises = data.candidates));
   },
   methods: {
     getImageUrl(imageId) {
@@ -69,29 +61,9 @@ export default {
   color: white;
   margin-bottom: 1em;
 }
-h1 {
-  color: white;
-}
-.countryCard {
-  min-width: 15rem;
-  min-height: 15rem;
-  margin: 2em;
-  max-width: 15rem;
-  max-height: 15rem;
-  border: solid;
-  border-color: white;
-}
-.countryCard h4{
-  color: aliceblue;
-  padding-top: 10px;
-}
 .countryGroupCard {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cardImg {
-  width: 100%;
-  height: 236px;
-}
-</style>>
+</style>

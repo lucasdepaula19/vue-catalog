@@ -1,15 +1,11 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <img alt="Vue logo" src="../../image/logo.png"> -->
-    <!-- <SearchComponent msg="Welcome to Your Vue.js App"/> -->
     <SearchComponent/>
     <HomeComponent />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import SearchComponent from "@/components/SearchComponent.vue";
 import HomeComponent from "@/components/HomeComponent.vue";
 

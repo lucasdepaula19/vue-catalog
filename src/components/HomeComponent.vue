@@ -3,20 +3,27 @@
     <!-- <router-link to="/">Go to my Home</router-link> -->
     <h2>Encontre seu lugar no mundo</h2>
     <b-row class="homeGroupCard">
-      <div class="homeCard" v-for="continente in continentes" v-bind:key="continente.id">
-        <router-link :to="{ path: '/country'+continente.name }">
-          <b-img class="cardImg" :src="continente.photo" fluid :alt="continente.name"></b-img>
-          <h4>{{continente.name}}</h4>
-        </router-link>
-      </div>
+      <CardComponent
+        v-for="continente in continentes"
+        v-bind:key="continente.id"
+        :photo="continente.photo"
+        :name="continente.name"
+      >
+      </CardComponent>
     </b-row>
   </div>
 </template>
 
 <script>
+import CardComponent from "@/components/CardComponent.vue";
+
 export default {
   name: "HomeComponent",
   computed: {},
+
+  components: {
+    CardComponent
+  },
 
   data() {
     return {
@@ -85,26 +92,9 @@ export default {
   color: white;
   margin-bottom: 1em;
 }
-.homeCard {
-  min-width: 15rem;
-  min-height: 15rem;
-  margin: 2em;
-  max-width: 15rem;
-  max-height: 15rem;
-  border: solid;
-  border-color: white;
-}
-.homeCard h4{
-  color: aliceblue;
-  padding-top: 10px;
-}
 .homeGroupCard {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cardImg {
-  width: 100%;
-  height: 236px;
-}
-</style>>
+</style>

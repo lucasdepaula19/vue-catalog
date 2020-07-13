@@ -1,41 +1,44 @@
 <template>
-  <div>
-      <b-card-group class="GroupCard" deck>
-        <b-card class="Card" v-for="item in itens" v-bind:key="item.index">
-          <router-link :to="{ path: '/myPath'+item.id }">{{item.name}}</router-link>
-        </b-card>
-      </b-card-group>
-  </div>
+    <div class="Card">
+      <router-link :to="{ path: '/country' + name }">
+        <b-img class="cardImg" :src="photo" fluid :alt="name"></b-img>
+        <h4>{{ name }}</h4>
+      </router-link>
+    </div>
 </template>
 
 <script>
-
 export default {
   name: "CardComponent",
-  computed: {},
-
-  components: {
-  },
-
-  data() {
-  },
-
-  mounted() {
+  props: {
+    photo: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>
 
 <style scoped>
-.Card{
+.Card {
   min-width: 15rem;
   min-height: 15rem;
-  margin-bottom: 2em;
+  margin: 2em;
   max-width: 15rem;
   max-height: 15rem;
+  border: solid;
+  border-color: white;
 }
-.GroupCard{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cardImg {
+  width: 100%;
+  height: 234px;
 }
-</style>>
+.Card h4 {
+  color: aliceblue;
+  padding-top: 10px;
+}
+</style>
