@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SearchComponent />
+    <!-- <SearchComponent /> -->
     <div class="homeList">
       <h2>Veja nossos principais destinos na {{ this.$route.params.name }}</h2>
       <b-row class="countryGroupCard">
@@ -18,7 +18,7 @@
 
 <script>
 import axios from "axios";
-import SearchComponent from "./SearchComponent.vue";
+// import SearchComponent from "./SearchComponent.vue";
 import CardComponent from "@/components/CardComponent.vue";
 
 export default {
@@ -26,7 +26,7 @@ export default {
   computed: {},
 
   components: {
-    SearchComponent,
+    // SearchComponent,
     CardComponent
   },
 

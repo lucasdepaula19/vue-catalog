@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import CountryComponent from '../components/CountryComponent.vue'
 import PlaceComponent from '../components/PlaceComponent.vue'
+import HomeComponent from '../components/HomeComponent.vue'
 
 Vue.use(VueRouter)
 
@@ -10,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: HomeComponent
   },
     {
     path: '/Country:name',
